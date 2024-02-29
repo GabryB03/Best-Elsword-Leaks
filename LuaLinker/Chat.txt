@@ -1,0 +1,55 @@
+k, then give me a second. xD
+Tipo di allegato: archive
+llcli.zip
+555.13 KB
+LuaLinker client program
+zlex
+8efbslao9
+
+Username and password(modificato)
+Login successful.
+
+Entering account management mode.
+Admin access: true
+
+
+Type 'commands' for a list of available commands.
+
+> createaccount zlex 8efbslao9
+OK
+> accountid zlex
+802
+> addtime 802 36000
+OK
+> utimeleft 802
+10 hours, 0 minutes, 0 seconds
+(36000s)
+>
+
+This is what the command line interface looks like (you won't have those commands of course, they're admin-only)(modificato)
+And to use it, you have to inject "LuaLinkerClient.dll" into the game client (Elsword, Closers, SoulWorker, whatever. Works on many games)
+To execute Lua scripts, load "ExecutorPlugin.dll" (with "loadplugin")
+With ExecutorPlugin, you can type
+plugin help
+
+to get a list of supported commands.
+"DumperPlugin.dll" allows you to read all Lua files the game client loads. It will put them into a directory called "luadumps" by default which has to exist in the game's working directory.
+You can change this directory by using this command when DumperPlugin is loaded:
+plugin "C:\path\to\directory\"
+It is important to add another backslash at the end of the path.(modificato)
+"StandaloneLauncher.exe" allows you to connect to the LuaLinker server and see how much usage time you have left with the "timeleft" command.
+(You can't use the "utimeleft" command like I did. That's for admins only and allows me to see how much time any user has left.)
+("user time left")(modificato)
+If you want to see the full list of supported commands, type "commands".
+If you want to see how to use a certain command, type "help <name of command>".
+Example:
+> commands
+accountid help sessions createaccount utimeleft addtime sessioncount timeleft shutdown commands
+Type 'help <command>' for help about a specific command.
+> help addtime
+Adds usage time to an account.
+Arguments: <account id> <seconds>
+>
+This program is extremely complicated to use - good luck with it.
+By the way, I also included the source code of "ExecutorPlugin.dll" and "DumperPlugin.dll", so if anything is unclear, take a look at those.
+And I only gave you 10 hours for now, so after you've used the program for 10 hours, it'll stop working.
